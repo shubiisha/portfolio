@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full-Stack E-Commerce Web Application | Shubiisha J</title>
+    <meta
+      name="description"
+      content="Full-stack shopping platform built with React, Node.js, Express.js, MySQL, and Firebase Authentication with dynamic cart, checkout, and admin dashboard."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+         HEADER & BACK NAVIGATION
+    ========================================================== -->
+    <header class="site-header" id="siteHeader">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+          <img
+            src="profile.jpg"
+            alt="Shubiisha J"
+            class="brand-logo-img"
+            onerror="this.src='https://ui-avatars.com/api/?name=Shubiisha+J&background=0b192e&color=f59e0b&bold=true'"
+          />
+          <div class="brand-logo-text">
+            Shubiisha<span>.dev</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#tech-stack">Tech Stack</a></li>
+          <li><a href="#future">Roadmap</a></li>
+        </ul>
+
+        <button
+          class="mobile-toggle"
+          id="mobileToggle"
+          aria-label="Toggle navigation menu"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         PROJECT HERO OVERVIEW (WITH CENTERED LIVE DEMO BUTTON)
+    ========================================================== -->
+    <section class="project-detail-hero">
+      <div class="project-detail-hero-content">
+        <div class="project-detail-badge">
+          <span>🛍️ FULL-STACK APPLICATION</span>
+        </div>
+
+        <h1 class="project-detail-title">E-Commerce Web Application</h1>
+
+        <p class="project-detail-summary">
+          A comprehensive full-stack e-commerce application engineered with React, Node.js, Express.js,
+          MySQL, and Firebase Authentication. Features dynamic product catalog browsing, interactive cart management,
+          secure checkout validation, customer order history, and an administrative control panel.
+        </p>
+
+        <!-- Tech Badges -->
+        <div class="project-tech-badges-center">
+          <span class="tech-badge-hero">⚛️ React.js & Vite</span>
+          <span class="tech-badge-hero">🟢 Node.js</span>
+          <span class="tech-badge-hero">⚙️ Express.js</span>
+          <span class="tech-badge-hero">🗄️ MySQL Database</span>
+          <span class="tech-badge-hero">🔥 Firebase Auth</span>
+          <span class="tech-badge-hero">☁️ AWS CloudFront</span>
+        </div>
+
+        <!-- CENTERED LIVE DEMO & GITHUB CTA BUTTONS -->
+        <div class="project-cta-center">
+          <a
+            href="https://dy0xnnx8ick3.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="live-demo-btn-large"
+          >
+            <span class="btn-icon">🚀</span>
+            <span>Launch Live Demo</span>
+            <span class="btn-arrow">↗</span>
+          </a>
+
+          <a
+            href="https://github.com/shubiisha"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-btn-large"
+          >
+            <span>💻</span>
+            <span>View GitHub Code</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Quick Project Metrics -->
+        <div class="project-quick-metrics">
+          <div class="quick-metric-item">
+            <div class="metric-label">Role</div>
+            <div class="metric-value">Full-Stack Developer</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Frontend / CDN</div>
+            <div class="metric-value">AWS CloudFront</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Backend API</div>
+            <div class="metric-value">Node.js + Express REST</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Database</div>
+            <div class="metric-value">MySQL Relational DB</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         KEY FEATURES SECTION (8 POWERFUL CARDS)
+    ========================================================== -->
+    <section class="features-section" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">FULL-STACK CAPABILITIES</span>
+          <h2>Key Features of the E-Commerce Platform</h2>
+          <p>
+            Designed with a modern customer storefront and back-office management system backed by relational data persistence.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1: Auth -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🔐</div>
+            <h3>Secure Authentication</h3>
+            <p>
+              Users can securely create accounts, log in, and maintain authenticated sessions using Firebase.
+            </p>
+            <ul>
+              <li>User Registration & Login</li>
+              <li>Token Verification</li>
+              <li>Protected Customer Routes</li>
+              <li>Secure Logout Flow</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Catalog Browsing -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🛍️</div>
+            <h3>Product Browsing</h3>
+            <p>
+              Browse dynamic product listings with rich image previews, pricing, and item specifications.
+            </p>
+            <ul>
+              <li>Dynamic Product Grid</li>
+              <li>Detailed Product View</li>
+              <li>Live Stock Indicators</li>
+              <li>Categorized Presentation</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Shopping Cart -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🛒</div>
+            <h3>Dynamic Shopping Cart</h3>
+            <p>
+              Add, increment, decrement, and remove items with instant cart subtotal and tax calculation.
+            </p>
+            <ul>
+              <li>Real-time Quantity Controls</li>
+              <li>Instant Price Subtotaling</li>
+              <li>Dynamic Badge Count</li>
+              <li>Persistent Cart State</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Checkout Flow -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">💳</div>
+            <h3>Streamlined Checkout</h3>
+            <p>
+              Review order items, fill in shipping information, and place orders through a verified checkout page.
+            </p>
+            <ul>
+              <li>Itemized Order Summary</li>
+              <li>Client-side Form Validation</li>
+              <li>Address & Contact Capture</li>
+              <li>Instant Confirmation Screen</li>
+            </ul>
+          </div>
+
+          <!-- Card 5: Order Management -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📦</div>
+            <h3>Order History</h3>
+            <p>
+              Customers can review their past purchases, order statuses, timestamps, and receipt details.
+            </p>
+            <ul>
+              <li>Past Orders Dashboard</li>
+              <li>Order Date & Reference ID</li>
+              <li>Purchased Items Breakdown</li>
+              <li>Customer-specific Records</li>
+            </ul>
+          </div>
+
+          <!-- Card 6: Admin Dashboard -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">👨‍💼</div>
+            <h3>Admin Dashboard</h3>
+            <p>
+              Administrative interface to oversee store operations, add new products, and track customer orders.
+            </p>
+            <ul>
+              <li>Add & Edit Products</li>
+              <li>Delete Outdated Listings</li>
+              <li>Review Customer Orders</li>
+              <li>Product Inventory Overview</li>
+            </ul>
+          </div>
+
+          <!-- Card 7: RESTful APIs -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">⚙️</div>
+            <h3>RESTful Backend API</h3>
+            <p>
+              Node.js and Express server with structured REST endpoints managing CRUD operations for store data.
+            </p>
+            <ul>
+              <li>Product CRUD Endpoints</li>
+              <li>Order Placement APIs</li>
+              <li>CORS & Security Middleware</li>
+              <li>JSON Payload Handlers</li>
+            </ul>
+          </div>
+
+          <!-- Card 8: MySQL Database -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🗄️</div>
+            <h3>Relational Database</h3>
+            <p>
+              Structured relational MySQL tables ensuring referential integrity across users, products, and orders.
+            </p>
+            <ul>
+              <li>Normalized Schema Design</li>
+              <li>Foreign Key Relationships</li>
+              <li>Optimized Query Performance</li>
+              <li>mysql2 Connection Pooling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TECHNICAL ARCHITECTURE SECTION
+    ========================================================== -->
+    <section class="tech-architecture-section" id="tech-stack">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">TECHNOLOGY STACK</span>
+          <h2>Built With Modern Web Technologies</h2>
+          <p>
+            Clean full-stack separation between the React client, Express API layer, and MySQL database.
+          </p>
+        </div>
+
+        <div class="tech-grid-4">
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">⚛️</div>
+            <h3>React.js & Vite</h3>
+            <p>Component-driven UI powered by Vite for instant Hot Module Replacement and optimized bundles.</p>
+            <ul>
+              <li>React 18 & Hooks</li>
+              <li>React Router DOM</li>
+              <li>Context API State</li>
+              <li>Axios API Client</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🟢</div>
+            <h3>Node.js & Express</h3>
+            <p>Fast and robust JavaScript server runtime delivering clean RESTful microservices.</p>
+            <ul>
+              <li>Node.js Runtime</li>
+              <li>Express Routing</li>
+              <li>Body-parser & CORS</li>
+              <li>Error-handling Middleware</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🗄️</div>
+            <h3>MySQL Database</h3>
+            <p>High-performance relational database managing products, user accounts, and transactional order records.</p>
+            <ul>
+              <li>Relational Data Modeling</li>
+              <li>Transactional Integrity</li>
+              <li>mysql2 Driver Library</li>
+              <li>Prepared SQL Statements</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🔥</div>
+            <h3>Firebase & AWS</h3>
+            <p>Firebase Authentication for identity access management and AWS CloudFront for global CDN distribution.</p>
+            <ul>
+              <li>Firebase Auth Token Validation</li>
+              <li>AWS CloudFront Distribution</li>
+              <li>HTTPS SSL Security</li>
+              <li>Global Edge Caching</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FUTURE ENHANCEMENTS ROADMAP (8 CARDS)
+    ========================================================== -->
+    <section class="future-section" id="future">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">COMING SOON</span>
+          <h2>Future Enhancements & Roadmap</h2>
+          <p>
+            Planned features to make the e-commerce platform even more comprehensive and feature-rich.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <div class="future-card">
+            <div class="future-card-icon">🔎</div>
+            <h3>Instant Search</h3>
+            <p>Debounced real-time product search with keyword auto-suggestions and typo tolerance.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🏷️</div>
+            <h3>Category Filtering</h3>
+            <p>Multi-attribute filters for categories, price sliders, and brand classifications.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🖼️</div>
+            <h3>Image Uploading</h3>
+            <p>Direct product photo upload with cloud storage integration (AWS S3 / Cloudinary).</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">⭐</div>
+            <h3>Ratings & Reviews</h3>
+            <p>Customer review system with 5-star ratings, verified purchase badges, and comments.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">❤️</div>
+            <h3>Wishlist Support</h3>
+            <p>Allow authenticated shoppers to bookmark favorite products for later purchase.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">💳</div>
+            <h3>Payment Gateway</h3>
+            <p>Integration of live payment processing using Stripe and Razorpay checkout APIs.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🚚</div>
+            <h3>Live Order Tracking</h3>
+            <p>Visual step-by-step progress tracker from order placed, packaged, to out-for-delivery.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">📊</div>
+            <h3>Inventory Analytics</h3>
+            <p>Low-stock automated alerts and sales revenue graphs in the admin panel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROJECT PAGINATION / SWITCHER
+    ========================================================== -->
+    <section class="project-pagination-section">
+      <div class="pagination-container">
+        <a href="project1.html" class="pagination-btn">
+          <span>← Previous: Todo App</span>
+        </a>
+
+        <a href="index.html#projects" class="pagination-btn pagination-home-btn">
+          <span>All Projects</span>
+        </a>
+
+        <a href="project3.html" class="pagination-btn">
+          <span>Next: Blog Platform →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">Shubiisha<span>.dev</span></div>
+          <div class="footer-tagline">
+            Computer Science & Engineering Student • Frontend Developer
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Shubiisha J. All Rights Reserved.</p>
+        <button id="backToTop" class="back-to-top-btn">
+          <span>Back to top</span>
+          <span>↑</span>
+        </button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

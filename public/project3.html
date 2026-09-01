@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Platform with Comments | Shubiisha J</title>
+    <meta
+      name="description"
+      content="Full-stack blogging platform built with React, Node.js, Express, MySQL, and Firebase Authentication with post authoring and interactive comments."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+         HEADER & BACK NAVIGATION
+    ========================================================== -->
+    <header class="site-header" id="siteHeader">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+          <img
+            src="profile.jpg"
+            alt="Shubiisha J"
+            class="brand-logo-img"
+            onerror="this.src='https://ui-avatars.com/api/?name=Shubiisha+J&background=0b192e&color=f59e0b&bold=true'"
+          />
+          <div class="brand-logo-text">
+            Shubiisha<span>.dev</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#tech-stack">Tech Stack</a></li>
+          <li><a href="#future">Roadmap</a></li>
+        </ul>
+
+        <button
+          class="mobile-toggle"
+          id="mobileToggle"
+          aria-label="Toggle navigation menu"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         PROJECT HERO OVERVIEW (WITH CENTERED LIVE DEMO BUTTON)
+    ========================================================== -->
+    <section class="project-detail-hero">
+      <div class="project-detail-hero-content">
+        <div class="project-detail-badge">
+          <span>✍️ FULL-STACK APPLICATION</span>
+        </div>
+
+        <h1 class="project-detail-title">Blog Platform with Comments</h1>
+
+        <p class="project-detail-summary">
+          A modern full-stack blogging platform where writers can register, compose, publish, and manage their
+          own articles, while readers can interact through nested post comments. Built with a React frontend, Express
+          REST API backend, and relational MySQL database.
+        </p>
+
+        <!-- Tech Badges -->
+        <div class="project-tech-badges-center">
+          <span class="tech-badge-hero">⚛️ React.js</span>
+          <span class="tech-badge-hero">🧭 React Router</span>
+          <span class="tech-badge-hero">🟢 Node.js</span>
+          <span class="tech-badge-hero">⚙️ Express.js</span>
+          <span class="tech-badge-hero">🗄️ MySQL Database</span>
+          <span class="tech-badge-hero">🔥 Firebase Auth</span>
+        </div>
+
+        <!-- CENTERED LIVE DEMO & GITHUB CTA BUTTONS -->
+        <div class="project-cta-center">
+          <a
+            href="https://dy0xnnx8ick3.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="live-demo-btn-large"
+          >
+            <span class="btn-icon">🚀</span>
+            <span>Launch Live Demo</span>
+            <span class="btn-arrow">↗</span>
+          </a>
+
+          <a
+            href="https://github.com/shubiisha"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-btn-large"
+          >
+            <span>💻</span>
+            <span>View GitHub Code</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Quick Project Metrics -->
+        <div class="project-quick-metrics">
+          <div class="quick-metric-item">
+            <div class="metric-label">Role</div>
+            <div class="metric-value">Full-Stack Developer</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Architecture</div>
+            <div class="metric-value">SPA + REST API</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Backend</div>
+            <div class="metric-value">Node.js + Express.js</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Database</div>
+            <div class="metric-value">MySQL Relational DB</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         KEY FEATURES SECTION (8 POWERFUL CARDS)
+    ========================================================== -->
+    <section class="features-section" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">APPLICATION HIGHLIGHTS</span>
+          <h2>Comprehensive Blogging & Interaction Features</h2>
+          <p>
+            Designed to empower content creators with rich publishing tools and foster reader community engagement.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1: Auth -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🔐</div>
+            <h3>Firebase Authentication</h3>
+            <p>
+              Robust user registration and login system with verified user credentials and persistent sessions.
+            </p>
+            <ul>
+              <li>User Account Registration</li>
+              <li>Secure Email Login</li>
+              <li>Encrypted Session Tokens</li>
+              <li>Safe Sign-out Handling</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Create Posts -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✍️</div>
+            <h3>Create & Publish Posts</h3>
+            <p>
+              Intuitive publishing form allowing authenticated authors to write titles, body content, and publish instantly.
+            </p>
+            <ul>
+              <li>Form Validation & Error States</li>
+              <li>Instant Feed Publication</li>
+              <li>Author Metadata Tagging</li>
+              <li>Clean Timestamp Recording</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Post Management -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🛠️</div>
+            <h3>Manage Own Posts</h3>
+            <p>
+              Authors retain complete ownership over their content with real-time update and deletion controls.
+            </p>
+            <ul>
+              <li>Edit Post Content & Titles</li>
+              <li>Delete Outdated Articles</li>
+              <li>Author-only Ownership Verification</li>
+              <li>Instant Cache Invalidation</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Comments -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">💬</div>
+            <h3>Interactive Comments</h3>
+            <p>
+              Engage with post readers through dynamic comments attached directly to each individual blog post.
+            </p>
+            <ul>
+              <li>Add Post Comments</li>
+              <li>Display Commenter Name & Time</li>
+              <li>Dynamic Comment List Updates</li>
+              <li>Relational Post-Comment Link</li>
+            </ul>
+          </div>
+
+          <!-- Card 5: My Blogs Dashboard -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📚</div>
+            <h3>"My Blogs" Dashboard</h3>
+            <p>
+              A dedicated user workspace to review, search, and manage all articles authored by the logged-in user.
+            </p>
+            <ul>
+              <li>Personal Article Portfolio</li>
+              <li>Quick Edit/Delete Access</li>
+              <li>Total Post Count Metric</li>
+              <li>User Specific Data Filtering</li>
+            </ul>
+          </div>
+
+          <!-- Card 6: Database Architecture -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🗄️</div>
+            <h3>MySQL Data Modeling</h3>
+            <p>
+              Normalized relational schema connecting users, posts, and comments with cascading foreign keys.
+            </p>
+            <ul>
+              <li>Normalized Schema Design</li>
+              <li>Foreign Key Constraints</li>
+              <li>Optimized Query Performance</li>
+              <li>mysql2 Connection Pooling</li>
+            </ul>
+          </div>
+
+          <!-- Card 7: REST API -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">⚙️</div>
+            <h3>RESTful API Architecture</h3>
+            <p>
+              Clean REST endpoints in Node.js/Express providing robust CRUD operations across all entities.
+            </p>
+            <ul>
+              <li>/api/posts CRUD Endpoints</li>
+              <li>/api/comments Endpoints</li>
+              <li>/api/users Synchronization</li>
+              <li>Standardized JSON Responses</li>
+            </ul>
+          </div>
+
+          <!-- Card 8: Reader UI -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📱</div>
+            <h3>Clean Reader Experience</h3>
+            <p>
+              Distraction-free reading typography, responsive grid layout, and seamless client-side page routing.
+            </p>
+            <ul>
+              <li>Modern Readable Typography</li>
+              <li>Smooth React Router Transitions</li>
+              <li>Mobile & Tablet Optimized</li>
+              <li>Accessible Contrast Colors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TECHNICAL ARCHITECTURE SECTION
+    ========================================================== -->
+    <section class="tech-architecture-section" id="tech-stack">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">TECHNICAL IMPLEMENTATION</span>
+          <h2>Full-Stack System Architecture</h2>
+          <p>
+            Decoupled architecture connecting a React single page application to an Express API and MySQL database.
+          </p>
+        </div>
+
+        <div class="tech-grid-4">
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">⚛️</div>
+            <h3>React.js Frontend</h3>
+            <p>Single-page application with React Router DOM for instantaneous page transitions and Axios for HTTP calls.</p>
+            <ul>
+              <li>React Functional Components</li>
+              <li>React Router DOM</li>
+              <li>Axios API Client</li>
+              <li>Custom State Hooks</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🟢</div>
+            <h3>Express Backend</h3>
+            <p>Node.js & Express API server handling requests, sanitizing inputs, and executing SQL operations.</p>
+            <ul>
+              <li>Express.js Routing Engine</li>
+              <li>CORS & Security Middleware</li>
+              <li>JSON Payload Parsing</li>
+              <li>Error-handling Pipeline</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🗄️</div>
+            <h3>MySQL Database</h3>
+            <p>Relational tables storing users, posts, and comments with primary and foreign key relationships.</p>
+            <ul>
+              <li>Users, Posts & Comments Tables</li>
+              <li>Relational Data Queries</li>
+              <li>Prepared SQL Statements</li>
+              <li>mysql2 Connection Pool</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🔥</div>
+            <h3>Firebase Authentication</h3>
+            <p>Secure identity access management mapping Firebase user UIDs into MySQL database records.</p>
+            <ul>
+              <li>Email & Password Auth</li>
+              <li>User UID Mapping</li>
+              <li>Token Verification</li>
+              <li>Protected API Routes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FUTURE ENHANCEMENTS ROADMAP (8 CARDS)
+    ========================================================== -->
+    <section class="future-section" id="future">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">COMING SOON</span>
+          <h2>Platform Roadmap & Future Enhancements</h2>
+          <p>
+            Planned features to make the blogging platform even more interactive, social, and feature-rich.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <div class="future-card">
+            <div class="future-card-icon">❤️</div>
+            <h3>Likes & Reactions</h3>
+            <p>Allow readers to like articles and react with emojis to show appreciation.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">👤</div>
+            <h3>Author Profiles</h3>
+            <p>Public author profile pages showing bios, social links, and published article archives.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🖼️</div>
+            <h3>Article Cover Images</h3>
+            <p>Enable uploading and displaying high-resolution featured hero images for blog posts.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🔎</div>
+            <h3>Instant Search</h3>
+            <p>Live article search filtering by keywords in titles, body content, and author names.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🏷️</div>
+            <h3>Tags & Categories</h3>
+            <p>Organize posts into categories (Web Dev, JavaScript, Career) with clickable filter tags.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">✍️</div>
+            <h3>Rich Text WYSIWYG</h3>
+            <p>Integrate a rich text editor supporting Markdown formatting, code blocks, and syntax highlighting.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">📱</div>
+            <h3>Enhanced Mobile UI</h3>
+            <p>Further optimize reading viewports with reading time estimates and progress scroll bars.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🔔</div>
+            <h3>Comment Notifications</h3>
+            <p>Notify article authors whenever a reader posts a new comment on their publication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROJECT PAGINATION / SWITCHER
+    ========================================================== -->
+    <section class="project-pagination-section">
+      <div class="pagination-container">
+        <a href="project2.html" class="pagination-btn">
+          <span>← Previous: E-Commerce App</span>
+        </a>
+
+        <a href="index.html#projects" class="pagination-btn pagination-home-btn">
+          <span>All Projects</span>
+        </a>
+
+        <a href="project1.html" class="pagination-btn">
+          <span>Next: Todo App →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">Shubiisha<span>.dev</span></div>
+          <div class="footer-tagline">
+            Computer Science & Engineering Student • Frontend Developer
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Shubiisha J. All Rights Reserved.</p>
+        <button id="backToTop" class="back-to-top-btn">
+          <span>Back to top</span>
+          <span>↑</span>
+        </button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

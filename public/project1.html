@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart To-Do & Task Management App | Shubiisha J</title>
+    <meta
+      name="description"
+      content="Smart task management application with Firebase Authentication, Firestore cloud sync, smart reminders, progress tracking, and PWA offline support."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+         HEADER & BACK NAVIGATION
+    ========================================================== -->
+    <header class="site-header" id="siteHeader">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+          <img
+            src="profile.jpg"
+            alt="Shubiisha J"
+            class="brand-logo-img"
+            onerror="this.src='https://ui-avatars.com/api/?name=Shubiisha+J&background=0b192e&color=f59e0b&bold=true'"
+          />
+          <div class="brand-logo-text">
+            Shubiisha<span>.dev</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#tech-stack">Tech Stack</a></li>
+          <li><a href="#future">Roadmap</a></li>
+        </ul>
+
+        <button
+          class="mobile-toggle"
+          id="mobileToggle"
+          aria-label="Toggle navigation menu"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         PROJECT HERO OVERVIEW (WITH CENTERED LIVE DEMO BUTTON)
+    ========================================================== -->
+    <section class="project-detail-hero">
+      <div class="project-detail-hero-content">
+        <div class="project-detail-badge">
+          <span>🚀 PRODUCTIVITY APPLICATION</span>
+        </div>
+
+        <h1 class="project-detail-title">Smart To-Do & Task Management App</h1>
+
+        <p class="project-detail-summary">
+          A modern, high-performance task management application designed to organize daily schedules,
+          monitor productivity in real-time, and provide an installable Progressive Web App (PWA) experience
+          backed by Firebase Authentication and Firestore Cloud Database.
+        </p>
+
+        <!-- Tech Badges -->
+        <div class="project-tech-badges-center">
+          <span class="tech-badge-hero">⚛️ React</span>
+          <span class="tech-badge-hero">🔥 Firebase Auth</span>
+          <span class="tech-badge-hero">☁️ Firestore Database</span>
+          <span class="tech-badge-hero">📱 PWA & Service Workers</span>
+          <span class="tech-badge-hero">🎨 CSS3 & Dark Mode</span>
+          <span class="tech-badge-hero">📊 Local Storage Sync</span>
+        </div>
+
+        <!-- CENTERED LIVE DEMO & GITHUB CTA BUTTONS -->
+        <div class="project-cta-center">
+          <a
+            href="https://shubiisha-todo.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="live-demo-btn-large"
+          >
+            <span class="btn-icon">🚀</span>
+            <span>Launch Live Demo</span>
+            <span class="btn-arrow">↗</span>
+          </a>
+
+          <a
+            href="https://github.com/shubiisha"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-btn-large"
+          >
+            <span>💻</span>
+            <span>View GitHub Code</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Quick Project Metrics -->
+        <div class="project-quick-metrics">
+          <div class="quick-metric-item">
+            <div class="metric-label">Role</div>
+            <div class="metric-value">Frontend Developer</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Hosting</div>
+            <div class="metric-value">Netlify (Live)</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Database</div>
+            <div class="metric-value">Firebase Firestore</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">App Type</div>
+            <div class="metric-value">Responsive PWA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         KEY FEATURES SECTION (8 POWERFUL CARDS)
+    ========================================================== -->
+    <section class="features-section" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">POWERFUL FEATURES</span>
+          <h2>Everything You Need to Stay Organized</h2>
+          <p>
+            Engineered with modern frontend patterns for instant responsiveness, seamless cloud synchronization,
+            and an intuitive productivity workflow.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1: Auth -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🔐</div>
+            <h3>Secure Authentication</h3>
+            <p>
+              Create an account, securely log in, and isolate personal tasks with Firebase Authentication.
+            </p>
+            <ul>
+              <li>User Signup & Email Verification</li>
+              <li>Secure Session Management</li>
+              <li>State Persistence</li>
+              <li>Single-click Logout</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: CRUD -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✅</div>
+            <h3>Task Management</h3>
+            <p>
+              Easily create, update, complete, and delete tasks with instant optimistic UI feedback.
+            </p>
+            <ul>
+              <li>Add & Edit Tasks On-the-Fly</li>
+              <li>One-tap Mark as Completed</li>
+              <li>Safe Delete with Confirmations</li>
+              <li>Inline Quick Editing</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Organization -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📅</div>
+            <h3>Smart Organization</h3>
+            <p>
+              Organize tasks chronologically by date and easily prioritize your daily schedule.
+            </p>
+            <ul>
+              <li>Today's Priority View</li>
+              <li>Weekly Schedule Overview</li>
+              <li>Monthly Calendar Filter</li>
+              <li>Archived Task History</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Cloud DB -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">☁️</div>
+            <h3>Cloud Synchronization</h3>
+            <p>
+              Tasks are securely stored in Firebase Firestore so your data is always synced across devices.
+            </p>
+            <ul>
+              <li>Real-time Data Listeners</li>
+              <li>User-specific Collections</li>
+              <li>Cross-session Cloud Sync</li>
+              <li>Offline Fallback Persistence</li>
+            </ul>
+          </div>
+
+          <!-- Card 5: Smart Reminders -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🔔</div>
+            <h3>Smart Reminders</h3>
+            <p>
+              Stay on top of critical deadlines with browser notifications and scheduled reminders.
+            </p>
+            <ul>
+              <li>Browser Notification API</li>
+              <li>Daily Scheduled Reminders</li>
+              <li>Customizable Alert Settings</li>
+              <li>Audio Reminder Toggle</li>
+            </ul>
+          </div>
+
+          <!-- Card 6: Progress Tracking -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📊</div>
+            <h3>Progress Tracking</h3>
+            <p>
+              Monitor your productivity score and visualize completed items throughout the day.
+            </p>
+            <ul>
+              <li>Completion Percentage Ring</li>
+              <li>Daily Productivity Summary</li>
+              <li>Streak & Completed Metrics</li>
+              <li>Visual Progress Indicators</li>
+            </ul>
+          </div>
+
+          <!-- Card 7: Themes & UI -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🎨</div>
+            <h3>Personalized Themes</h3>
+            <p>
+              Tailor the application visual interface to your preferences with dark and light modes.
+            </p>
+            <ul>
+              <li>OLED-friendly Dark Mode</li>
+              <li>Crisp Clean Light Mode</li>
+              <li>Responsive Mobile Layout</li>
+              <li>Accessible Contrast Colors</li>
+            </ul>
+          </div>
+
+          <!-- Card 8: PWA -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📱</div>
+            <h3>Progressive Web App</h3>
+            <p>
+              Install the app directly on your phone or desktop for an authentic native feel.
+            </p>
+            <ul>
+              <li>Installable Web App Manifest</li>
+              <li>Offline Service Worker Caching</li>
+              <li>Fast Load Performance</li>
+              <li>Mobile Homescreen Icon</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TECHNICAL ARCHITECTURE SECTION
+    ========================================================== -->
+    <section class="tech-architecture-section" id="tech-stack">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">TECHNICAL IMPLEMENTATION</span>
+          <h2>Built With Modern Architecture</h2>
+          <p>
+            Combining component-based frontend design with serverless cloud infrastructure for maximum reliability.
+          </p>
+        </div>
+
+        <div class="tech-grid-4">
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">⚛️</div>
+            <h3>React Frontend</h3>
+            <p>Constructed using modular functional components and custom React hooks for state management.</p>
+            <ul>
+              <li>React Hooks (useState, useEffect)</li>
+              <li>Modular Component Tree</li>
+              <li>Clean CSS Architecture</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🔥</div>
+            <h3>Firebase Auth</h3>
+            <p>Handles user security, tokens, encrypted password validation, and authenticated sessions.</p>
+            <ul>
+              <li>Email & Password Auth</li>
+              <li>Session State Listeners</li>
+              <li>Protected User Routes</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🗄️</div>
+            <h3>Firestore Database</h3>
+            <p>Scalable NoSQL cloud database providing live real-time synchronization on document updates.</p>
+            <ul>
+              <li>Real-time Snapshot Observers</li>
+              <li>Document-level Security Rules</li>
+              <li>Subcollection Hierarchy</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🚀</div>
+            <h3>PWA & Netlify</h3>
+            <p>Deployed on Netlify's high-speed CDN with service workers ensuring seamless offline access.</p>
+            <ul>
+              <li>Automated CI/CD Deployment</li>
+              <li>Service Worker Cache Strategy</li>
+              <li>Web App Manifest Configuration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FUTURE ENHANCEMENTS ROADMAP (8 CARDS)
+    ========================================================== -->
+    <section class="future-section" id="future">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">COMING SOON</span>
+          <h2>Product Roadmap & Future Enhancements</h2>
+          <p>
+            Planned capabilities and enhancements to elevate task management efficiency even further.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <div class="future-card">
+            <div class="future-card-icon">🔔</div>
+            <h3>Push Notifications</h3>
+            <p>Receive deadline reminders even when the browser tab is closed or idle.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🔄</div>
+            <h3>Recurring Tasks</h3>
+            <p>Automatically schedule recurring habits daily, weekly, or on custom cycles.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🏷️</div>
+            <h3>Task Categories</h3>
+            <p>Tag tasks by projects such as Work, Study, Health, and Personal Goals.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">⭐</div>
+            <h3>Priority Matrices</h3>
+            <p>Assign High, Medium, and Low urgency badges to focus on critical items first.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">⏰</div>
+            <h3>Custom Due Times</h3>
+            <p>Attach precise hour-minute deadlines to trigger countdown timers.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">📈</div>
+            <h3>Productivity Analytics</h3>
+            <p>Interactive weekly charts illustrating task completion trends over time.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">📦</div>
+            <h3>Native Android APK</h3>
+            <p>Packaging the progressive web app into a native APK using Capacitor framework.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">💾</div>
+            <h3>Automated Cloud Backup</h3>
+            <p>One-click JSON export and cloud snapshot backups for complete data safety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROJECT PAGINATION / SWITCHER
+    ========================================================== -->
+    <section class="project-pagination-section">
+      <div class="pagination-container">
+        <a href="index.html#projects" class="pagination-btn pagination-home-btn">
+          <span>← Back to All Projects</span>
+        </a>
+
+        <a href="project2.html" class="pagination-btn">
+          <span>Next: E-Commerce Web App</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">Shubiisha<span>.dev</span></div>
+          <div class="footer-tagline">
+            Computer Science & Engineering Student • Frontend Developer
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Shubiisha J. All Rights Reserved.</p>
+        <button id="backToTop" class="back-to-top-btn">
+          <span>Back to top</span>
+          <span>↑</span>
+        </button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
