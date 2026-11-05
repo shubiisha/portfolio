@@ -177,7 +177,7 @@ const projects = [
     categories: ['Full Stack', 'React'],
     featured: true,
     repo: 'https://github.com/shubiisha/E-commerce-app',
-    demo: null,
+    demo: 'https://dy0xnnx8ick3.cloudfront.net/',
     cover: '/assets/covers/ecommerce.svg',
     stack: ['React', 'Vite', 'Context API', 'Node.js', 'Express', 'MySQL', 'Firebase Auth'],
     problem:
@@ -268,7 +268,6 @@ const projects = [
     repo: 'https://github.com/shubiisha/TO-DO-app',
     demo: 'https://shubiisha-todo.netlify.app',
     cover: '/assets/covers/todo.svg',
-    screenshot: '/assets/shots/todo-app.png',
     stack: ['JavaScript', 'Firebase Auth', 'Firestore', 'PWA', 'CSS3'],
     problem:
       'Most simple to-do apps lose data between devices and give no sense of progress across a day, week or month.',
