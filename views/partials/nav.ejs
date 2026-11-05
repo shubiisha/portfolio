@@ -1,0 +1,48 @@
+<header class="site-nav" id="siteNav">
+  <div class="container site-nav__inner">
+    <a class="brand" href="/" aria-label="<%= site.profile.name %> — home">
+      <span class="brand__mark" aria-hidden="true">SJ</span>
+      <span class="brand__text">
+        <%= site.profile.name %>
+        <small><%= site.profile.role %></small>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#about"<%= page === 'home' ? '' : '' %>>About</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#projects">Projects</a>
+      <a href="/#github">GitHub</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn--primary btn--sm" href="/#contact"><%- h.icon('mail', 15) %> Hire me</a>
+      <button
+        class="nav-toggle"
+        type="button"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle__open"><%- h.icon('menu') %></span>
+        <span class="nav-toggle__close"><%- h.icon('close') %></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="/">Home <%- h.icon('arrow', 15) %></a></li>
+      <li><a href="/#about">About <%- h.icon('arrow', 15) %></a></li>
+      <li><a href="/#skills">Skills <%- h.icon('arrow', 15) %></a></li>
+      <li><a href="/#projects">Projects <%- h.icon('arrow', 15) %></a></li>
+      <li><a href="/#github">GitHub <%- h.icon('arrow', 15) %></a></li>
+      <li><a href="/#contact">Contact <%- h.icon('arrow', 15) %></a></li>
+    </ul>
+    <a class="btn btn--primary btn--block" href="/#contact"><%- h.icon('mail', 16) %> Get in touch</a>
+  </nav>
+</div>
