@@ -33,6 +33,27 @@ const profile = {
   linkedin: LINKEDIN_URL,
   location: 'India · Open to onsite & remote roles',
   availability: 'Available for internship & entry-level software roles',
+  domain: process.env.SITE_URL ? new URL(process.env.SITE_URL).host : 'localhost:3000',
+  interests: ['React & component architecture', 'REST API design', 'Cloud fundamentals (AWS)', 'Data structures & algorithms'],
+  about: [
+    'I am a final-year B.E. Computer Science and Engineering student who builds complete web applications rather than isolated screens. My work usually starts with the data model and the API contract, then moves outward to a React interface that stays fast and predictable on small screens.',
+    'Most of what I know comes from shipping projects end to end: an e-commerce store with authentication, an admin dashboard and a MySQL schema; a blog platform with per-author ownership rules; a Flask scheduling system where queue priority actually changes the order patients are seen.',
+    'I like problems that can be measured — a query that returns the right rows, a page that does not shift while loading, a wait-time estimate that matches reality. When I get stuck I narrow the problem down with logs and small reproductions instead of guessing.'
+  ],
+  strengths: [
+    { title: 'End-to-end ownership', text: 'Comfortable moving between schema design, Express routes and React components in the same task.' },
+    { title: 'Readable code', text: 'Small modules, explicit naming and validation at the boundary — code a reviewer can follow.' },
+    { title: 'Debugging discipline', text: 'Reproduce, isolate, fix, then verify the exact behaviour that was broken.' },
+    { title: 'Design awareness', text: 'Interfaces built with a consistent type scale, spacing rhythm and accessible contrast.' }
+  ],
+  objective:
+    'Looking for an internship or entry-level software development role where I can contribute to production web applications, learn from experienced engineers through code review, and grow into a dependable full-stack developer.',
+  approach: [
+    'Understand the requirement and write down the data model first.',
+    'Build the smallest working vertical slice, then extend it.',
+    'Validate inputs on the server, not only in the browser.',
+    'Test the flow the way a user would, on a phone as well as a desktop.'
+  ],
   education: {
     degree: 'B.E. Computer Science and Engineering',
     status: 'Final year · Expected graduation 2026',
