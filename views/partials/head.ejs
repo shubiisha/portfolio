@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>" />
+    <meta name="author" content="<%= site.profile.name %>" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://<%= site.profile.domain %><%= canonical %>" />
+
+    <meta property="og:type" content="<%= page === 'project' ? 'article' : 'website' %>" />
+    <meta property="og:site_name" content="<%= site.profile.name %> — Portfolio" />
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:description" content="<%= description %>" />
+    <meta property="og:url" content="https://<%= site.profile.domain %><%= canonical %>" />
+    <meta property="og:image" content="https://<%= site.profile.domain %>/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="<%= site.profile.name %> — <%= site.profile.role %>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= title %>" />
+    <meta name="twitter:description" content="<%= description %>" />
+    <meta name="twitter:image" content="https://<%= site.profile.domain %>/assets/og.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <script type="application/ld+json">
+      <%- JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: site.profile.name,
+        jobTitle: site.profile.role,
+        email: 'mailto:' + site.profile.email,
+        url: 'https://' + site.profile.domain,
+        sameAs: [site.profile.github].concat(site.profile.linkedin ? [site.profile.linkedin] : []),
+        alumniOf: { '@type': 'CollegeOrUniversity', name: 'B.E. Computer Science and Engineering' },
+        knowsAbout: site.skillGroups.flatMap(function (g) { return g.skills.map(function (s) { return s.name; }); })
+      }) %>
+    </script>
+  </head>
+  <body class="<%= page === 'home' ? 'page-home' : 'page-' + page %>">
+    <a class="skip-link" href="#main">Skip to content</a>
