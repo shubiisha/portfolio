@@ -1,0 +1,124 @@
+<%- include('partials/head') %>
+
+<%- include('partials/nav') %>
+
+<main id="main">
+  <section class="section project-hero">
+    <div class="container">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/#projects">Projects</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page"><%= project.title %></span>
+      </nav>
+
+      <div class="project-hero__grid">
+        <div>
+          <p class="eyebrow"><%= project.categories.join(' · ') %> · <%= project.year %></p>
+          <h1 class="section-title"><%= project.title %></h1>
+          <p class="project-hero__sub"><%= project.subtitle %></p>
+          <p class="about__body" style="max-width: 60ch;"><%= project.summary %></p>
+
+          <div class="hero__cta" style="margin-top: 26px;">
+            <a class="btn btn--primary" href="<%= project.repo %>" target="_blank" rel="noopener noreferrer">
+              <%- h.icon('github', 17) %> <span class="btn__label">View source on GitHub</span>
+            </a>
+            <% if (project.demo) { %>
+              <a class="btn btn--ghost" href="<%= project.demo %>" target="_blank" rel="noopener noreferrer">
+                <%- h.icon('external', 17) %> <span class="btn__label">Open live demo</span>
+              </a>
+            <% } else { %>
+              <span class="btn btn--ghost btn--disabled" aria-disabled="true" title="No working deployment for this project">
+                <%- h.icon('external', 17) %> <span class="btn__label">No live demo</span>
+              </span>
+            <% } %>
+          </div>
+
+          <% if (!project.demo) { %>
+            <p class="source-note" style="margin-top: 14px;">
+              <%- h.icon('alert', 14) %>
+              This project has no public deployment, so no demo button is shown. The full source is on GitHub.
+            </p>
+          <% } %>
+        </div>
+
+        <div class="project-hero__facts">
+          <div class="fact"><span>Role</span><strong><%= project.role %></strong></div>
+          <div class="fact"><span>Year</span><strong><%= project.year %></strong></div>
+          <% project.highlights.forEach(function (item) { %>
+            <div class="fact"><span><%= item.label %></span><strong><%= item.value %></strong></div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <figure class="project-cover">
+        <img src="<%= project.cover %>" alt="<%= project.title %> interface preview" width="1200" height="675" loading="eager" decoding="async" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="case-grid">
+        <div>
+          <h2 class="case-title">The problem</h2>
+          <p class="about__body"><%= project.problem %></p>
+
+          <h2 class="case-title">What it does</h2>
+          <ul class="checklist">
+            <% project.features.forEach(function (feature) { %><li><%= feature %></li><% }); %>
+          </ul>
+        </div>
+
+        <aside class="card">
+          <div class="card__head"><%- h.icon('code', 17) %><h3>Stack</h3></div>
+          <div class="chip-row">
+            <% project.stack.forEach(function (tech) { %><span class="chip"><%= tech %></span><% }); %>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text">
+          <p class="eyebrow">Keep looking</p>
+          <h2 class="section-title">Related work</h2>
+        </div>
+        <a class="link-arrow" href="/#projects">All projects <%- h.icon('arrow', 15) %></a>
+      </div>
+
+      <div class="projects-grid projects-grid--related">
+        <% related.forEach(function (item) { %>
+          <article class="project-card">
+            <div class="project-card__media">
+              <img src="<%= item.cover %>" alt="<%= item.title %> — project cover" width="800" height="450" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title"><a href="/projects/<%= item.slug %>"><%= item.title %></a></h3>
+              <p class="project-card__sub"><%= item.subtitle %></p>
+              <p class="project-card__summary"><%= item.summary %></p>
+              <div class="project-card__actions">
+                <a class="icon-btn" href="<%= item.repo %>" target="_blank" rel="noopener noreferrer"><%- h.icon('github', 14) %> GitHub</a>
+                <a class="link-arrow" href="/projects/<%= item.slug %>">Case study <%- h.icon('arrow', 15) %></a>
+              </div>
+            </div>
+          </article>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+
+<script src="/js/site.js" defer></script>
+</body>
+</html>

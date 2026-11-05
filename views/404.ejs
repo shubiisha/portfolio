@@ -1,0 +1,24 @@
+<%- include('partials/head') %>
+
+<%- include('partials/nav') %>
+
+<main id="main">
+  <section class="section error-page">
+    <div class="container">
+      <p class="eyebrow">404</p>
+      <h1 class="section-title">That page doesn’t exist.</h1>
+      <p class="section-sub" style="margin-top: 12px;">
+        The link may be outdated. Everything I’ve built is reachable from the homepage.
+      </p>
+      <div class="hero__cta" style="margin-top: 28px;">
+        <a class="btn btn--primary" href="/"><%- h.icon('arrow', 17) %> <span class="btn__label">Back to home</span></a>
+        <a class="btn btn--ghost" href="/#projects"><%- h.icon('layers', 17) %> <span class="btn__label">Browse projects</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>
