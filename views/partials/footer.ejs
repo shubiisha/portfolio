@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand__mark" aria-hidden="true">SJ</span>
+          <span class="brand__text">
+            <%= site.profile.name %>
+            <small><%= site.profile.role %></small>
+          </span>
+        </a>
+        <p style="margin-top: 14px;"><%= site.profile.tagline %></p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-col">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#github">GitHub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:<%= site.profile.email %>"><%= site.profile.email %></a></li>
+            <li><a href="<%= site.profile.github %>" target="_blank" rel="noopener noreferrer">GitHub profile</a></li>
+            <% if (site.profile.linkedin) { %>
+              <li><a href="<%= site.profile.linkedin %>" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <% } %>
+            <li><a href="<%= site.profile.resume.file %>" download>Résumé (PDF)</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <%= currentYear %> <%= site.profile.name %>. All rights reserved.</span>
+      <span class="mono">Built with Node.js, Express &amp; EJS</span>
+    </div>
+  </div>
+</footer>
