@@ -878,6 +878,9 @@ button, input, textarea {
 .project-card-header-visual.p3-bg {
   background: linear-gradient(135deg, #fdf4ff, #fae8ff);
 }
+.project-card-header-visual.p4-bg {
+  background: linear-gradient(135deg, #ecfdf5, #ccfbf1);
+}
 
 .project-card-icon-big {
   font-size: 3rem;
@@ -1987,7 +1990,7 @@ textarea:focus-visible {
 }
 
 .projects-showcase-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
   gap: 20px;
 }
@@ -2015,6 +2018,10 @@ textarea:focus-visible {
 
 .project-card-header-visual.p3-bg {
   background: radial-gradient(circle at 50% 65%, #e8ddff, #f3efff 62%, #fbfaff);
+}
+
+.project-card-header-visual.p4-bg {
+  background: radial-gradient(circle at 50% 65%, #c9f4e3, #e8faf2 62%, #f8fdfb);
 }
 
 .project-card-icon-big {
