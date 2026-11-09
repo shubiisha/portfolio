@@ -1,140 +1,444 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const siteHeader = document.getElementById('siteHeader');
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navLinks = document.getElementById('navLinks');
-  const backToTopBtn = document.getElementById('backToTop');
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart To-Do & Task Management App | Shubiisha J</title>
+    <meta
+      name="description"
+      content="A task-management app built with HTML, CSS, JavaScript, Firebase Authentication, and Firestore, with task organization, reminders, progress tracking, and PWA support."
+    />
 
-  const typingTarget = document.getElementById('typingText');
-  if (typingTarget) {
-    const phrases = [
-      'Developer • Frontend & Full-Stack Engineer',
-      'Problem Solver • Product Builder',
-      'Creative Coder • UI + API Developer'
-    ];
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    const type = () => {
-      const currentPhrase = phrases[phraseIndex];
-      if (!deleting) {
-        charIndex++;
-        typingTarget.textContent = currentPhrase.slice(0, charIndex);
-        if (charIndex === currentPhrase.length) {
-          deleting = true;
-          setTimeout(type, 1200);
-          return;
-        }
-      } else {
-        charIndex--;
-        typingTarget.textContent = currentPhrase.slice(0, charIndex);
-        if (charIndex === 0) {
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-      }
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- =========================================================
+         HEADER & BACK NAVIGATION
+    ========================================================== -->
+    <header class="site-header" id="siteHeader">
+      <div class="nav-container">
+        <a href="index.html" class="brand-logo">
+          <img
+            src="image1.jpg"
+            alt="Shubiisha J"
+            class="brand-logo-img"
+          />
+          <div class="brand-logo-text">
+            Shubiisha<span>.dev</span>
+          </div>
+        </a>
 
-      const speed = deleting ? 35 : 80;
-      setTimeout(type, speed);
-    };
+        <nav aria-label="Project navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
+            <li><a href="#future">Roadmap</a></li>
+          </ul>
+        </nav>
 
-    type();
-  }
+        <button
+          class="mobile-toggle"
+          id="mobileToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          type="button"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
 
-  if (siteHeader) {
-    const updateHeader = () => {
-      siteHeader.classList.toggle('scrolled', window.scrollY > 20);
-    };
+    <main id="main-content">
+    <!-- =========================================================
+         PROJECT HERO OVERVIEW (WITH CENTERED LIVE DEMO BUTTON)
+    ========================================================== -->
+    <section class="project-detail-hero">
+      <div class="project-detail-hero-content">
+        <div class="project-detail-badge">
+          <span>🚀 PRODUCTIVITY APPLICATION</span>
+        </div>
 
-    updateHeader();
-    window.addEventListener('scroll', updateHeader, { passive: true });
-  }
+        <h1 class="project-detail-title">Smart To-Do & Task Management App</h1>
 
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const isOpen = navLinks.classList.contains('open');
-      mobileToggle.setAttribute('aria-expanded', String(isOpen));
-      mobileToggle.textContent = isOpen ? '✕' : '☰';
-    });
+        <p class="project-detail-summary">
+          A task-management app for organizing daily work, tracking completion, and keeping tasks in sync.
+          It is built with HTML, CSS, JavaScript, Firebase Authentication, and Firestore, with installable
+          Progressive Web App support.
+        </p>
 
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.textContent = '☰';
-      });
-    });
-  }
+        <!-- Tech Badges -->
+        <div class="project-tech-badges-center">
+          <span class="tech-badge-hero">HTML, CSS & JavaScript</span>
+          <span class="tech-badge-hero">🔥 Firebase Auth</span>
+          <span class="tech-badge-hero">☁️ Firestore Database</span>
+          <span class="tech-badge-hero">📱 PWA & Service Workers</span>
+          <span class="tech-badge-hero">🎨 CSS3 & Dark Mode</span>
+          <span class="tech-badge-hero">📊 Progress tracking</span>
+        </div>
 
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const skillCards = document.querySelectorAll('.skill-card-modern');
+        <!-- CENTERED LIVE DEMO & GITHUB CTA BUTTONS -->
+        <div class="project-cta-center">
+          <a
+            href="https://shubiisha-todo.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="live-demo-btn-large"
+          >
+            <span class="btn-icon">🚀</span>
+            <span>Launch Live Demo</span>
+            <span class="btn-arrow">↗</span>
+          </a>
 
-  if (filterButtons.length && skillCards.length) {
-    filterButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
-        filterButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+          <a
+            href="https://github.com/shubiisha/TO-DO-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-btn-large"
+          >
+            <span>💻</span>
+            <span>View source code</span>
+            <span>↗</span>
+          </a>
+        </div>
 
-        skillCards.forEach((card) => {
-          const matches = filter === 'all' || card.dataset.category === filter;
-          card.style.display = matches ? 'flex' : 'none';
-        });
-      });
-    });
-  }
+        <!-- Quick Project Metrics -->
+        <div class="project-quick-metrics">
+          <div class="quick-metric-item">
+            <div class="metric-label">Role</div>
+            <div class="metric-value">Frontend Developer</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Hosting</div>
+            <div class="metric-value">Netlify (Live)</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">Database</div>
+            <div class="metric-value">Firebase Firestore</div>
+          </div>
+          <div class="quick-metric-item">
+            <div class="metric-label">App Type</div>
+            <div class="metric-value">Responsive PWA</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+    <!-- =========================================================
+         KEY FEATURES SECTION (8 POWERFUL CARDS)
+    ========================================================== -->
+    <section class="features-section" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">POWERFUL FEATURES</span>
+          <h2>Everything You Need to Stay Organized</h2>
+          <p>
+            Engineered with modern frontend patterns for instant responsiveness, seamless cloud synchronization,
+            and an intuitive productivity workflow.
+          </p>
+        </div>
 
-  if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', (event) => {
-      event.preventDefault();
+        <div class="features-grid">
+          <!-- Card 1: Auth -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🔐</div>
+            <h3>Secure Authentication</h3>
+            <p>
+              Register, log in, and keep each account's tasks private with Firebase Authentication.
+            </p>
+            <ul>
+              <li>User signup and login</li>
+              <li>Firebase Authentication</li>
+              <li>Logout functionality</li>
+            </ul>
+          </div>
 
-      const name = document.getElementById('name')?.value.trim() || '';
-      const email = document.getElementById('email')?.value.trim() || '';
-      const subject = document.getElementById('subject')?.value.trim() || '';
-      const message = document.getElementById('message')?.value.trim() || '';
-      const submitButton = contactForm.querySelector('button[type="submit"]');
+          <!-- Card 2: CRUD -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✅</div>
+            <h3>Task Management</h3>
+            <p>
+              Add tasks, make updates, mark work complete, and remove tasks.
+            </p>
+            <ul>
+              <li>Add and update tasks</li>
+              <li>Mark tasks as complete</li>
+              <li>Delete tasks</li>
+            </ul>
+          </div>
 
-      if (!name || !email || !subject || !message) {
-        formStatus.textContent = 'Please fill in all fields before sending your message.';
-        formStatus.className = 'form-status-msg error';
-        return;
-      }
+          <!-- Card 3: Organization -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📅</div>
+            <h3>Smart Organization</h3>
+            <p>
+              Browse tasks by day, week, month, or task history.
+            </p>
+            <ul>
+              <li>Today's tasks</li>
+              <li>This week's tasks</li>
+              <li>This month's tasks</li>
+              <li>Task history by date</li>
+            </ul>
+          </div>
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        formStatus.textContent = 'Please enter a valid email address.';
-        formStatus.className = 'form-status-msg error';
-        return;
-      }
+          <!-- Card 4: Cloud DB -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">☁️</div>
+            <h3>Cloud Synchronization</h3>
+            <p>
+              Task data is stored in Firebase Firestore.
+            </p>
+            <ul>
+              <li>Cloud task storage</li>
+              <li>Tasks linked to user accounts</li>
+            </ul>
+          </div>
 
-      if (submitButton) {
-        const originalText = submitButton.textContent;
-        submitButton.disabled = true;
-        submitButton.textContent = 'Opening mail app...';
+          <!-- Card 5: Smart Reminders -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🔔</div>
+            <h3>Smart Reminders</h3>
+            <p>
+              Browser notifications and daily reminders help bring attention back to tasks.
+            </p>
+            <ul>
+              <li>Browser notifications</li>
+              <li>Daily reminder when opening the app</li>
+              <li>Notification toggle in settings</li>
+            </ul>
+          </div>
 
-        const mailtoBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0ASubject: ${subject}%0D%0A%0D%0A${message}`;
-        const mailtoLink = `mailto:shubiishaj@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+          <!-- Card 6: Progress Tracking -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📊</div>
+            <h3>Progress Tracking</h3>
+            <p>
+              Review daily completion totals and a progress percentage.
+            </p>
+            <ul>
+              <li>Daily completion summary</li>
+              <li>Progress percentage</li>
+              <li>Task completion tracking</li>
+            </ul>
+          </div>
 
-        window.location.href = mailtoLink;
+          <!-- Card 7: Themes & UI -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🎨</div>
+            <h3>Personalized Themes</h3>
+            <p>
+              Choose a dark or light theme and use the app on mobile screens.
+            </p>
+            <ul>
+              <li>Dark and light themes</li>
+              <li>Responsive design</li>
+              <li>Mobile-friendly interface</li>
+            </ul>
+          </div>
 
-        formStatus.textContent = 'Your mail app has been opened. If it did not open, email shubiishaj@gmail.com directly.';
-        formStatus.className = 'form-status-msg success';
-        contactForm.reset();
+          <!-- Card 8: PWA -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📱</div>
+            <h3>Progressive Web App</h3>
+            <p>
+              Install the app directly on your phone or desktop for an authentic native feel.
+            </p>
+            <ul>
+              <li>Installable Web App Manifest</li>
+              <li>Offline Service Worker Caching</li>
+              <li>Fast Load Performance</li>
+              <li>Mobile Homescreen Icon</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        setTimeout(() => {
-          submitButton.disabled = false;
-          submitButton.textContent = originalText;
-        }, 1500);
-      }
-    });
-  }
-});
+    <!-- =========================================================
+         TECHNICAL ARCHITECTURE SECTION
+    ========================================================== -->
+    <section class="tech-architecture-section" id="tech-stack">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">TECHNICAL IMPLEMENTATION</span>
+          <h2>Built With Modern Architecture</h2>
+          <p>
+            A browser-based frontend connected to Firebase Authentication and Firestore.
+          </p>
+        </div>
+
+        <div class="tech-grid-4">
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">⚛️</div>
+            <h3>Web Frontend</h3>
+            <p>Built with HTML, CSS, and JavaScript for a responsive task-management experience.</p>
+            <ul>
+              <li>HTML5 structure</li>
+              <li>Responsive CSS</li>
+              <li>JavaScript interactions</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🔥</div>
+            <h3>Firebase Auth</h3>
+            <p>Provides account registration, login, and logout for task users.</p>
+            <ul>
+              <li>Email & Password Auth</li>
+              <li>Firebase Authentication</li>
+              <li>Session state handling</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🗄️</div>
+            <h3>Firestore Database</h3>
+            <p>Stores tasks in Firestore and keeps each user's task data available across sessions.</p>
+            <ul>
+              <li>Firestore task storage</li>
+              <li>Task updates and completion</li>
+              <li>Tasks organized by date</li>
+            </ul>
+          </div>
+
+          <div class="tech-arch-card">
+            <div class="tech-arch-icon">🚀</div>
+            <h3>PWA & Netlify</h3>
+            <p>Published on Netlify with installable Progressive Web App support.</p>
+            <ul>
+              <li>Netlify hosting</li>
+              <li>Installable PWA</li>
+              <li>Mobile-friendly interface</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FUTURE ENHANCEMENTS ROADMAP (8 CARDS)
+    ========================================================== -->
+    <section class="future-section" id="future">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">COMING SOON</span>
+          <h2>Product Roadmap & Future Enhancements</h2>
+          <p>
+            Planned capabilities and enhancements to elevate task management efficiency even further.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <div class="future-card">
+            <div class="future-card-icon">🔔</div>
+            <h3>Push Notifications</h3>
+            <p>Receive deadline reminders even when the browser tab is closed or idle.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🔄</div>
+            <h3>Recurring Tasks</h3>
+            <p>Automatically schedule recurring habits daily, weekly, or on custom cycles.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">🏷️</div>
+            <h3>Task Categories</h3>
+            <p>Tag tasks by projects such as Work, Study, Health, and Personal Goals.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">⭐</div>
+            <h3>Priority Matrices</h3>
+            <p>Assign High, Medium, and Low urgency badges to focus on critical items first.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">⏰</div>
+            <h3>Custom Due Times</h3>
+            <p>Attach precise hour-minute deadlines to trigger countdown timers.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">📈</div>
+            <h3>Productivity Analytics</h3>
+            <p>Interactive weekly charts illustrating task completion trends over time.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">📦</div>
+            <h3>Native Android APK</h3>
+            <p>Packaging the progressive web app into a native APK using Capacitor framework.</p>
+          </div>
+
+          <div class="future-card">
+            <div class="future-card-icon">💾</div>
+            <h3>Automated Cloud Backup</h3>
+            <p>One-click JSON export and cloud snapshot backups for complete data safety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROJECT PAGINATION / SWITCHER
+    ========================================================== -->
+    <section class="project-pagination-section">
+      <div class="pagination-container">
+        <a href="index.html#projects" class="pagination-btn pagination-home-btn">
+          <span>← Back to All Projects</span>
+        </a>
+
+        <a href="project2.html" class="pagination-btn">
+          <span>Next: E-Commerce Web App</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">Shubiisha<span>.dev</span></div>
+          <div class="footer-tagline">
+            Computer Science & Engineering Student • Frontend Developer
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Shubiisha J. All Rights Reserved.</p>
+        <button id="backToTop" class="back-to-top-btn">
+          <span>Back to top</span>
+          <span>↑</span>
+        </button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
