@@ -1,5 +1,5 @@
 window.EMAILJS_CONFIG = {
-  serviceId: '',
-  templateId: '',
-  publicKey: ''
+  serviceId: "service_jsewzvf",
+  templateId: "template_dywhknd",
+  publicKey: "fEFrTBi2expgkCpY1",
 };
