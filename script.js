@@ -122,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm && formStatus) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      formStatus.className = 'form-status-msg';
+      formStatus.textContent = '';
 
       const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
