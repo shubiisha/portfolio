@@ -171,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formStatus.className = 'form-status-msg error';
         formStatus.innerText =
           err.message === 'EmailJS is not configured.'
-            ? '❌ The contact form is not configured. Please email shubiishaj@gmail.com directly.'
-            : '❌ Failed to send your message. Please email shubiishaj@gmail.com directly.';
+            ? '❌ The contact form is not configured. Please email shubiisha23@gmail.com directly.'
+            : '❌ Failed to send your message. Please email shubiisha23@gmail.com directly.';
         console.error('EmailJS contact form error:', err);
       } finally {
         submitBtn.innerHTML = originalBtnText;
