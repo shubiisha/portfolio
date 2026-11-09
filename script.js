@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = navLinks.classList.contains('open');
       mobileToggle.innerHTML = isOpen ? '✕' : '☰';
       mobileToggle.setAttribute('aria-expanded', isOpen);
+      mobileToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Close navigation menu' : 'Open navigation menu'
+      );
     });
 
     // Close menu when clicking nav links
@@ -22,7 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.remove('open');
         mobileToggle.innerHTML = '☰';
         mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Open navigation menu');
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        mobileToggle.innerHTML = '☰';
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Open navigation menu');
+        mobileToggle.focus();
+      }
     });
   }
 
@@ -57,8 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = item.getAttribute('href').substring(1);
             if (href === currentId) {
               item.classList.add('active');
+              item.setAttribute('aria-current', 'location');
             } else {
               item.classList.remove('active');
+              item.removeAttribute('aria-current');
             }
           });
         }
@@ -76,8 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         // Remove active class from all buttons
-        filterBtns.forEach(b => b.classList.remove('active'));
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
 
         const filterValue = btn.getAttribute('data-filter');
 
@@ -107,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const messageInput = document.getElementById('message');
       const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-      if (!nameInput || !emailInput || !messageInput) return;
+      if (!nameInput || !emailInput || !messageInput || !submitBtn) return;
 
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
@@ -123,46 +144,40 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span>Sending Message... ⏳</span>';
       submitBtn.disabled = true;
+      contactForm.setAttribute('aria-busy', 'true');
 
       try {
-        // Try backend endpoint if available, otherwise simulate graceful success
-        let success = false;
-        try {
-          const response = await fetch('/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, message })
-          });
-          if (response.ok) {
-            const data = await response.json();
-            formStatus.className = 'form-status-msg success';
-            formStatus.innerText = data.message || '✨ Thank you! Your message has been sent successfully.';
-            success = true;
-          }
-        } catch (fetchErr) {
-          // In static preview / Netlify / client environment
-          console.log('Using client fallback for message handling');
+        const config = window.EMAILJS_CONFIG;
+        if (
+          !config?.serviceId ||
+          !config?.templateId ||
+          !config?.publicKey ||
+          !window.emailjs?.sendForm
+        ) {
+          throw new Error('EmailJS is not configured.');
         }
 
-        if (!success) {
-          // Client-side fallback message
-          setTimeout(() => {
-            formStatus.className = 'form-status-msg success';
-            formStatus.innerHTML = `✨ <strong>Thank you ${name}!</strong> Your message has been recorded. You can also reach me directly at <a href="mailto:shubiishaj@gmail.com" style="text-decoration:underline; font-weight:bold;">shubiishaj@gmail.com</a>.`;
-            contactForm.reset();
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-          }, 800);
-          return;
-        }
+        await window.emailjs.sendForm(
+          config.serviceId,
+          config.templateId,
+          contactForm,
+          { publicKey: config.publicKey }
+        );
 
+        formStatus.className = 'form-status-msg success';
+        formStatus.innerText = '✨ Thank you! Your message has been sent successfully.';
         contactForm.reset();
       } catch (err) {
         formStatus.className = 'form-status-msg error';
-        formStatus.innerText = '❌ Failed to send message. Please reach out directly at shubiishaj@gmail.com';
+        formStatus.innerText =
+          err.message === 'EmailJS is not configured.'
+            ? '❌ The contact form is not configured. Please email shubiishaj@gmail.com directly.'
+            : '❌ Failed to send your message. Please email shubiishaj@gmail.com directly.';
+        console.error('EmailJS contact form error:', err);
       } finally {
         submitBtn.innerHTML = originalBtnText;
         submitBtn.disabled = false;
+        contactForm.removeAttribute('aria-busy');
       }
     });
   }

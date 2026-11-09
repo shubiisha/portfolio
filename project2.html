@@ -6,7 +6,7 @@
     <title>Full-Stack E-Commerce Web Application | Shubiisha J</title>
     <meta
       name="description"
-      content="Full-stack shopping platform built with React, Node.js, Express.js, MySQL, and Firebase Authentication with dynamic cart, checkout, and admin dashboard."
+      content="A full-stack e-commerce application built with React, Node.js, Express, MySQL, and Firebase Authentication."
     />
 
     <!-- Google Fonts -->
@@ -21,6 +21,7 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- =========================================================
          HEADER & BACK NAVIGATION
     ========================================================== -->
@@ -28,33 +29,38 @@
       <div class="nav-container">
         <a href="index.html" class="brand-logo">
           <img
-            src="profile.jpg"
+            src="image1.jpg"
             alt="Shubiisha J"
             class="brand-logo-img"
-            onerror="this.src='https://ui-avatars.com/api/?name=Shubiisha+J&background=0b192e&color=f59e0b&bold=true'"
           />
           <div class="brand-logo-text">
             Shubiisha<span>.dev</span>
           </div>
         </a>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#tech-stack">Tech Stack</a></li>
-          <li><a href="#future">Roadmap</a></li>
-        </ul>
+        <nav aria-label="Project navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
+            <li><a href="#future">Roadmap</a></li>
+          </ul>
+        </nav>
 
         <button
           class="mobile-toggle"
           id="mobileToggle"
-          aria-label="Toggle navigation menu"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          type="button"
         >
           ☰
         </button>
       </div>
     </header>
 
+    <main id="main-content">
     <!-- =========================================================
          PROJECT HERO OVERVIEW (WITH CENTERED LIVE DEMO BUTTON)
     ========================================================== -->
@@ -79,31 +85,27 @@
           <span class="tech-badge-hero">⚙️ Express.js</span>
           <span class="tech-badge-hero">🗄️ MySQL Database</span>
           <span class="tech-badge-hero">🔥 Firebase Auth</span>
-          <span class="tech-badge-hero">☁️ AWS CloudFront</span>
         </div>
 
         <!-- CENTERED LIVE DEMO & GITHUB CTA BUTTONS -->
         <div class="project-cta-center">
           <a
-            href="https://dy0xnnx8ick3.cloudfront.net/"
+            href="https://github.com/shubiisha/E-commerce-app"
             target="_blank"
             rel="noopener noreferrer"
             class="live-demo-btn-large"
           >
             <span class="btn-icon">🚀</span>
-            <span>Launch Live Demo</span>
+            <span>View source code</span>
             <span class="btn-arrow">↗</span>
           </a>
 
           <a
-            href="https://github.com/shubiisha"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="index.html#projects"
             class="github-btn-large"
           >
-            <span>💻</span>
-            <span>View GitHub Code</span>
-            <span>↗</span>
+            <span>←</span>
+            <span>Back to all projects</span>
           </a>
         </div>
 
@@ -114,8 +116,8 @@
             <div class="metric-value">Full-Stack Developer</div>
           </div>
           <div class="quick-metric-item">
-            <div class="metric-label">Frontend / CDN</div>
-            <div class="metric-value">AWS CloudFront</div>
+            <div class="metric-label">Frontend</div>
+            <div class="metric-value">React + Vite</div>
           </div>
           <div class="quick-metric-item">
             <div class="metric-label">Backend API</div>
@@ -318,13 +320,12 @@
 
           <div class="tech-arch-card">
             <div class="tech-arch-icon">🔥</div>
-            <h3>Firebase & AWS</h3>
-            <p>Firebase Authentication for identity access management and AWS CloudFront for global CDN distribution.</p>
+            <h3>Firebase Authentication</h3>
+            <p>Firebase Authentication provides account sign-in for the application.</p>
             <ul>
-              <li>Firebase Auth Token Validation</li>
-              <li>AWS CloudFront Distribution</li>
-              <li>HTTPS SSL Security</li>
-              <li>Global Edge Caching</li>
+              <li>Firebase Authentication</li>
+              <li>User registration and login</li>
+              <li>Authenticated user sessions</li>
             </ul>
           </div>
         </div>
@@ -414,6 +415,8 @@
         </a>
       </div>
     </section>
+
+    </main>
 
     <!-- =========================================================
          FOOTER

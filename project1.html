@@ -6,7 +6,7 @@
     <title>Smart To-Do & Task Management App | Shubiisha J</title>
     <meta
       name="description"
-      content="Smart task management application with Firebase Authentication, Firestore cloud sync, smart reminders, progress tracking, and PWA offline support."
+      content="A task-management app built with HTML, CSS, JavaScript, Firebase Authentication, and Firestore, with task organization, reminders, progress tracking, and PWA support."
     />
 
     <!-- Google Fonts -->
@@ -21,6 +21,7 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- =========================================================
          HEADER & BACK NAVIGATION
     ========================================================== -->
@@ -28,33 +29,38 @@
       <div class="nav-container">
         <a href="index.html" class="brand-logo">
           <img
-            src="profile.jpg"
+            src="image1.jpg"
             alt="Shubiisha J"
             class="brand-logo-img"
-            onerror="this.src='https://ui-avatars.com/api/?name=Shubiisha+J&background=0b192e&color=f59e0b&bold=true'"
           />
           <div class="brand-logo-text">
             Shubiisha<span>.dev</span>
           </div>
         </a>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#tech-stack">Tech Stack</a></li>
-          <li><a href="#future">Roadmap</a></li>
-        </ul>
+        <nav aria-label="Project navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
+            <li><a href="#future">Roadmap</a></li>
+          </ul>
+        </nav>
 
         <button
           class="mobile-toggle"
           id="mobileToggle"
-          aria-label="Toggle navigation menu"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          type="button"
         >
           ☰
         </button>
       </div>
     </header>
 
+    <main id="main-content">
     <!-- =========================================================
          PROJECT HERO OVERVIEW (WITH CENTERED LIVE DEMO BUTTON)
     ========================================================== -->
@@ -67,19 +73,19 @@
         <h1 class="project-detail-title">Smart To-Do & Task Management App</h1>
 
         <p class="project-detail-summary">
-          A modern, high-performance task management application designed to organize daily schedules,
-          monitor productivity in real-time, and provide an installable Progressive Web App (PWA) experience
-          backed by Firebase Authentication and Firestore Cloud Database.
+          A task-management app for organizing daily work, tracking completion, and keeping tasks in sync.
+          It is built with HTML, CSS, JavaScript, Firebase Authentication, and Firestore, with installable
+          Progressive Web App support.
         </p>
 
         <!-- Tech Badges -->
         <div class="project-tech-badges-center">
-          <span class="tech-badge-hero">⚛️ React</span>
+          <span class="tech-badge-hero">HTML, CSS & JavaScript</span>
           <span class="tech-badge-hero">🔥 Firebase Auth</span>
           <span class="tech-badge-hero">☁️ Firestore Database</span>
           <span class="tech-badge-hero">📱 PWA & Service Workers</span>
           <span class="tech-badge-hero">🎨 CSS3 & Dark Mode</span>
-          <span class="tech-badge-hero">📊 Local Storage Sync</span>
+          <span class="tech-badge-hero">📊 Progress tracking</span>
         </div>
 
         <!-- CENTERED LIVE DEMO & GITHUB CTA BUTTONS -->
@@ -96,13 +102,13 @@
           </a>
 
           <a
-            href="https://github.com/shubiisha"
+            href="https://github.com/shubiisha/TO-DO-app"
             target="_blank"
             rel="noopener noreferrer"
             class="github-btn-large"
           >
             <span>💻</span>
-            <span>View GitHub Code</span>
+            <span>View source code</span>
             <span>↗</span>
           </a>
         </div>
@@ -149,13 +155,12 @@
             <div class="feature-icon-wrapper">🔐</div>
             <h3>Secure Authentication</h3>
             <p>
-              Create an account, securely log in, and isolate personal tasks with Firebase Authentication.
+              Register, log in, and keep each account's tasks private with Firebase Authentication.
             </p>
             <ul>
-              <li>User Signup & Email Verification</li>
-              <li>Secure Session Management</li>
-              <li>State Persistence</li>
-              <li>Single-click Logout</li>
+              <li>User signup and login</li>
+              <li>Firebase Authentication</li>
+              <li>Logout functionality</li>
             </ul>
           </div>
 
@@ -164,13 +169,12 @@
             <div class="feature-icon-wrapper">✅</div>
             <h3>Task Management</h3>
             <p>
-              Easily create, update, complete, and delete tasks with instant optimistic UI feedback.
+              Add tasks, make updates, mark work complete, and remove tasks.
             </p>
             <ul>
-              <li>Add & Edit Tasks On-the-Fly</li>
-              <li>One-tap Mark as Completed</li>
-              <li>Safe Delete with Confirmations</li>
-              <li>Inline Quick Editing</li>
+              <li>Add and update tasks</li>
+              <li>Mark tasks as complete</li>
+              <li>Delete tasks</li>
             </ul>
           </div>
 
@@ -179,13 +183,13 @@
             <div class="feature-icon-wrapper">📅</div>
             <h3>Smart Organization</h3>
             <p>
-              Organize tasks chronologically by date and easily prioritize your daily schedule.
+              Browse tasks by day, week, month, or task history.
             </p>
             <ul>
-              <li>Today's Priority View</li>
-              <li>Weekly Schedule Overview</li>
-              <li>Monthly Calendar Filter</li>
-              <li>Archived Task History</li>
+              <li>Today's tasks</li>
+              <li>This week's tasks</li>
+              <li>This month's tasks</li>
+              <li>Task history by date</li>
             </ul>
           </div>
 
@@ -194,13 +198,11 @@
             <div class="feature-icon-wrapper">☁️</div>
             <h3>Cloud Synchronization</h3>
             <p>
-              Tasks are securely stored in Firebase Firestore so your data is always synced across devices.
+              Task data is stored in Firebase Firestore.
             </p>
             <ul>
-              <li>Real-time Data Listeners</li>
-              <li>User-specific Collections</li>
-              <li>Cross-session Cloud Sync</li>
-              <li>Offline Fallback Persistence</li>
+              <li>Cloud task storage</li>
+              <li>Tasks linked to user accounts</li>
             </ul>
           </div>
 
@@ -209,13 +211,12 @@
             <div class="feature-icon-wrapper">🔔</div>
             <h3>Smart Reminders</h3>
             <p>
-              Stay on top of critical deadlines with browser notifications and scheduled reminders.
+              Browser notifications and daily reminders help bring attention back to tasks.
             </p>
             <ul>
-              <li>Browser Notification API</li>
-              <li>Daily Scheduled Reminders</li>
-              <li>Customizable Alert Settings</li>
-              <li>Audio Reminder Toggle</li>
+              <li>Browser notifications</li>
+              <li>Daily reminder when opening the app</li>
+              <li>Notification toggle in settings</li>
             </ul>
           </div>
 
@@ -224,13 +225,12 @@
             <div class="feature-icon-wrapper">📊</div>
             <h3>Progress Tracking</h3>
             <p>
-              Monitor your productivity score and visualize completed items throughout the day.
+              Review daily completion totals and a progress percentage.
             </p>
             <ul>
-              <li>Completion Percentage Ring</li>
-              <li>Daily Productivity Summary</li>
-              <li>Streak & Completed Metrics</li>
-              <li>Visual Progress Indicators</li>
+              <li>Daily completion summary</li>
+              <li>Progress percentage</li>
+              <li>Task completion tracking</li>
             </ul>
           </div>
 
@@ -239,13 +239,12 @@
             <div class="feature-icon-wrapper">🎨</div>
             <h3>Personalized Themes</h3>
             <p>
-              Tailor the application visual interface to your preferences with dark and light modes.
+              Choose a dark or light theme and use the app on mobile screens.
             </p>
             <ul>
-              <li>OLED-friendly Dark Mode</li>
-              <li>Crisp Clean Light Mode</li>
-              <li>Responsive Mobile Layout</li>
-              <li>Accessible Contrast Colors</li>
+              <li>Dark and light themes</li>
+              <li>Responsive design</li>
+              <li>Mobile-friendly interface</li>
             </ul>
           </div>
 
@@ -276,52 +275,52 @@
           <span class="section-label">TECHNICAL IMPLEMENTATION</span>
           <h2>Built With Modern Architecture</h2>
           <p>
-            Combining component-based frontend design with serverless cloud infrastructure for maximum reliability.
+            A browser-based frontend connected to Firebase Authentication and Firestore.
           </p>
         </div>
 
         <div class="tech-grid-4">
           <div class="tech-arch-card">
             <div class="tech-arch-icon">⚛️</div>
-            <h3>React Frontend</h3>
-            <p>Constructed using modular functional components and custom React hooks for state management.</p>
+            <h3>Web Frontend</h3>
+            <p>Built with HTML, CSS, and JavaScript for a responsive task-management experience.</p>
             <ul>
-              <li>React Hooks (useState, useEffect)</li>
-              <li>Modular Component Tree</li>
-              <li>Clean CSS Architecture</li>
+              <li>HTML5 structure</li>
+              <li>Responsive CSS</li>
+              <li>JavaScript interactions</li>
             </ul>
           </div>
 
           <div class="tech-arch-card">
             <div class="tech-arch-icon">🔥</div>
             <h3>Firebase Auth</h3>
-            <p>Handles user security, tokens, encrypted password validation, and authenticated sessions.</p>
+            <p>Provides account registration, login, and logout for task users.</p>
             <ul>
               <li>Email & Password Auth</li>
-              <li>Session State Listeners</li>
-              <li>Protected User Routes</li>
+              <li>Firebase Authentication</li>
+              <li>Session state handling</li>
             </ul>
           </div>
 
           <div class="tech-arch-card">
             <div class="tech-arch-icon">🗄️</div>
             <h3>Firestore Database</h3>
-            <p>Scalable NoSQL cloud database providing live real-time synchronization on document updates.</p>
+            <p>Stores tasks in Firestore and keeps each user's task data available across sessions.</p>
             <ul>
-              <li>Real-time Snapshot Observers</li>
-              <li>Document-level Security Rules</li>
-              <li>Subcollection Hierarchy</li>
+              <li>Firestore task storage</li>
+              <li>Task updates and completion</li>
+              <li>Tasks organized by date</li>
             </ul>
           </div>
 
           <div class="tech-arch-card">
             <div class="tech-arch-icon">🚀</div>
             <h3>PWA & Netlify</h3>
-            <p>Deployed on Netlify's high-speed CDN with service workers ensuring seamless offline access.</p>
+            <p>Published on Netlify with installable Progressive Web App support.</p>
             <ul>
-              <li>Automated CI/CD Deployment</li>
-              <li>Service Worker Cache Strategy</li>
-              <li>Web App Manifest Configuration</li>
+              <li>Netlify hosting</li>
+              <li>Installable PWA</li>
+              <li>Mobile-friendly interface</li>
             </ul>
           </div>
         </div>
@@ -412,6 +411,8 @@
     <!-- =========================================================
          FOOTER
     ========================================================== -->
+    </main>
+
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-brand">

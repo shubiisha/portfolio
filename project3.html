@@ -6,7 +6,7 @@
     <title>Blog Platform with Comments | Shubiisha J</title>
     <meta
       name="description"
-      content="Full-stack blogging platform built with React, Node.js, Express, MySQL, and Firebase Authentication with post authoring and interactive comments."
+      content="A full-stack blogging application built with React, Node.js, Express, MySQL, and Firebase Authentication."
     />
 
     <!-- Google Fonts -->
@@ -21,6 +21,7 @@
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- =========================================================
          HEADER & BACK NAVIGATION
     ========================================================== -->
@@ -28,33 +29,38 @@
       <div class="nav-container">
         <a href="index.html" class="brand-logo">
           <img
-            src="profile.jpg"
+            src="image1.jpg"
             alt="Shubiisha J"
             class="brand-logo-img"
-            onerror="this.src='https://ui-avatars.com/api/?name=Shubiisha+J&background=0b192e&color=f59e0b&bold=true'"
           />
           <div class="brand-logo-text">
             Shubiisha<span>.dev</span>
           </div>
         </a>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#tech-stack">Tech Stack</a></li>
-          <li><a href="#future">Roadmap</a></li>
-        </ul>
+        <nav aria-label="Project navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-back-link"><span>←</span> Back to Portfolio</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
+            <li><a href="#future">Roadmap</a></li>
+          </ul>
+        </nav>
 
         <button
           class="mobile-toggle"
           id="mobileToggle"
-          aria-label="Toggle navigation menu"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          type="button"
         >
           ☰
         </button>
       </div>
     </header>
 
+    <main id="main-content">
     <!-- =========================================================
          PROJECT HERO OVERVIEW (WITH CENTERED LIVE DEMO BUTTON)
     ========================================================== -->
@@ -68,7 +74,7 @@
 
         <p class="project-detail-summary">
           A modern full-stack blogging platform where writers can register, compose, publish, and manage their
-          own articles, while readers can interact through nested post comments. Built with a React frontend, Express
+          own articles, while readers can interact through comments. Built with a React frontend, Express
           REST API backend, and relational MySQL database.
         </p>
 
@@ -85,25 +91,22 @@
         <!-- CENTERED LIVE DEMO & GITHUB CTA BUTTONS -->
         <div class="project-cta-center">
           <a
-            href="https://dy0xnnx8ick3.cloudfront.net/"
+            href="https://github.com/shubiisha/Blog-Platform"
             target="_blank"
             rel="noopener noreferrer"
             class="live-demo-btn-large"
           >
             <span class="btn-icon">🚀</span>
-            <span>Launch Live Demo</span>
+            <span>View source code</span>
             <span class="btn-arrow">↗</span>
           </a>
 
           <a
-            href="https://github.com/shubiisha"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="index.html#projects"
             class="github-btn-large"
           >
-            <span>💻</span>
-            <span>View GitHub Code</span>
-            <span>↗</span>
+            <span>←</span>
+            <span>Back to all projects</span>
           </a>
         </div>
 
@@ -414,6 +417,8 @@
         </a>
       </div>
     </section>
+
+    </main>
 
     <!-- =========================================================
          FOOTER
